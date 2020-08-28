@@ -10,5 +10,5 @@ class Author
         'name', 'email', 'github', 'twitter', 'location', 'latest_article_published'
     ];
 
-    protected $hidden = []
+    protected $hidden = [];
 }
