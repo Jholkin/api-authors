@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use Illuminate\Http\Request;
 
-class AuthorController
+class AuthorController extends Controller
 {
     public function showAllAuthors()
     {
@@ -19,8 +19,14 @@ class AuthorController
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:authors',
+            'location' => 'required|alpha'
+        ]);
+
         $author = Author::create($request->all());
-        
+
         return response()->json($author, 201);
     }
 
