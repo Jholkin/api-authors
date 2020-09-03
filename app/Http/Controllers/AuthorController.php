@@ -12,7 +12,7 @@ class AuthorController extends Controller
         return response()->json(Author::all());
     }
 
-    public function showOneAuthor()
+    public function showOneAuthor($id)
     {
         return response()->json(Author::findOrFail($id));
     }
