@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class AuthorController extends Controller
 {
     public function showAllAuthors(Request $request)
     {
         //$authors = \DB::table('authors')->paginate(10);
+        //Cache::put('prueba', 'esto es un dato en cache');
+        var_dump(Cache::get('prueba'));
         return $request->isJson() ? response()->json(Author::paginate(15), 200)
                                     : response()->json(['error' => 'Unauthorized'], 401, []);
     }
