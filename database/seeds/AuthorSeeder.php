@@ -20,7 +20,7 @@ class AuthorSeeder extends Seeder
                 'email' => $faker->email,
                 'github' => $faker->word,
                 'twitter' => '@'.$faker->word,
-                'Location' => $faker->address,
+                'location' => $faker->address,
                 'latest_article_published' => $faker->sentence(6,true),
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s')
