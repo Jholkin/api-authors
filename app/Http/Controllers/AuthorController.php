@@ -12,9 +12,11 @@ class AuthorController extends Controller
     {
         //$authors = \DB::table('authors')->paginate(10);
         //Cache::put('prueba', 'esto es un dato en cache');
-        var_dump(Cache::get('prueba'));
+        //var_dump(Cache::get('prueba'));
+        //return response()->json(Author::paginate(10), 200);/*
+        //var_dump($request->isJson());exit();
         return $request->isJson() ? response()->json(Author::paginate(15), 200)
-                                    : response()->json(['error' => 'Unauthorized'], 401, []);
+                                    : response()->json(['error' => 'Unauthorized dx'], 401, []);
     }
 
     public function showOneAuthor(Request $request, $id)
